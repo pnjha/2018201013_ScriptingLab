@@ -1,0 +1,64 @@
+1. 	mkdir Kachra
+
+2. 	pwd
+   	cd~
+   	pwd
+
+3. 	touch Gaitonde 
+ 	cat > Gaitonde 
+	Created by Vikram
+
+4.	mkdir Bhagwan
+	cd Bhagwan
+	ls Bhagwan
+	touch test
+
+5.	cd Bhagwan
+	touch file1
+	chmod 744 file1
+	touch file2
+	chmod 722 file2
+	touch file3
+	chmod 711 file3
+	cat > file1
+	hello
+	cat > file2
+	world
+	cat > file3
+	prakash
+
+6. 	mkdir setting
+	cd setting
+	touch Kukoo | touch Mandir
+
+7. 	cat > Kukoo
+	Apun kukoo ke peechhe bhag raha ta in ”Kukoo.txt
+	cat > Mandir Desh mandir ke peechhe bhag raha ta
+
+
+8.	cat >> Kukoo
+	By Ganesh Gaitonde
+
+9.	cat Kukoo Mandir
+
+11.	touch .Anjali_Mathur
+	cat > .Anjali_Mathur
+	Agar mard field pe kaam karna chahe toh passion. Aur agar aurat karna chahe toh
+	bhoot.
+
+12.	cat >> Mandir
+	Apun socha jab desh mein PM ka imaan nahi, toh apun seedhe raaste chal ke kya
+	karega?
+
+13. 	mkdir -p ScriptingGames/Parulkar/Zoya | mkdir -p ScriptingGames/Trivedi | mkdir -p 		ScriptingGames/Sartaj/Megha | mkdir -p ScriptingGames/GaneshGaitonde/Cuckoo
+
+14. 	cp Mandir  ../ScriptingGames/Trivedi
+	cp Kukoo  ../ScriptingGames/GaneshGaitonde/Kukoo
+
+15. 	cp -r ./ScriptingGames ./CopyOfScriptingGames
+
+16. 	mv /ScriptingGames/GaneshGaitonde ./ScriptingGames/Trivedi
+
+21. 	rm -r CopyOfScriptingGames
+
+22.	tar –czvf 2018201013_lab1.tar.gz ./2018201013_lab1

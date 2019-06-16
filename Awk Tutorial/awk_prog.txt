@@ -1,0 +1,19 @@
+BEGIN { 
+	FS="|"; 
+	printf("We're going to count managers and g.m.\n");
+	managerCount = 0;
+	gmCount = 0;
+}
+
+$3 ~ "manager"{
+	managerCount++;
+}
+$3 ~ " g\.m\."{
+	gmCount++;
+}
+
+
+END {
+	printf ("\nTotal no. of managers are %d\n",managerCount);
+	printf ("Total no. of g.m are %d\n",gmCount);
+}

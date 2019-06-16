@@ -1,0 +1,961 @@
+Script started on 2018-08-13 17:11:16+0530
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -la
+total 8
+drwxr-xr-x 2 prakashjha prakashjha 4096 Aug 13 17:11 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha 4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha    0 Aug 13 17:11 2018201013_lab1.script
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir kachra
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34mkachra[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm kachra
+rm: cannot remove 'kachra': Is a directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r kachra
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Kachra
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ pwd
+/home/prakashjha/Desktop/2018201013_lab1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ whereami
+Can't write PID file to /var/run/whereami.started.5592 at /usr/sbin/whereami line 229.
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ man whereami
+[?1049h[22;0;0t[?1h=whereami(8)                                                    System Manager's Manual                                                    whereami(8)[m
+[m
+[1mNAME[0m[m
+       whereami — non-interatively ascertain the location of the computer and reconfigure the system appropriately.[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mwhereami[0m  [[1m--debug[0m  ]  [[1m--scriptdebug[0m ]  [[1m--syslog[0m ]  [[1m--noactions[0m ]  [[1m--nolocking[0m ]  [[1m--mapping[0m ]  [[1m--basedir[0m [4mdirectory[24m [4m][24m  [4m[[24m[1m--statedir[0m [4mdirec‐[24m[m
+       [4mtory[24m [4m][24m  [4m[[24m[1m--from[0m [4mlocation_list[24m [4m][24m  [4m[[24m[1m--run_from[0m [4mcalling_program_tag[24m [4m][24m  [4m[[24m[1mlocation_list[0m[4m][24m[m
+[m
+[1mDESCRIPTION[0m[m
+       `whereami' provides a configurable and extensible framework for automatic location-detection and reconfiguration of computers, typically  lap‐[m
+       tops.[m
+[m
+   [1mDetection[0m[m
+       Detection  is  handled through the use of various network and hardware probing tools.  These tools have been wrapped in small shell scripts to[m
+       interface them to whereami, but the end-user with different requirements may wish to extend these in some situations.[m
+[m
+       [1mwhereami[0m processes the file /etc/whereami/detect.conf performing the tests specified in there in order to decide which location  the  computer[m
+       is currently located at.[m
+[m
+       For full detail on the discovery process, you should read the detect.conf (5) manpage.[m
+[m
+   [1mConfiguration[0m[m
+       Configuration  is  handled through standard shell scripting.  A variety of small utility scripts are provided and the author is always willing[m
+       to accept more.[m
+[m
+       The file /etc/whereami/whereami.conf is parsed and a script built containing the actions specified there which are associated with  the  loca‐[m
+       tions found during the detection phase.  Actions may be configured for when leaving, remaining, or arriving at a location.[m
+[m
+       Once the script has been built, it is run to effect the necessary changes to the system configuration.[m
+[m
+[1mOPTIONS[0m[m
+       This  program  follows the modern command-line syntax preceding each option with a double dash (`--').  Short form options are also available,[m
+       but are not documented (RTFC :-)[m
+[m
+       [1m--debug[0m   Run in debugging mode.  A verbose output is provided and the resulting script is output to the screen and not executed.[m
+[m
+[7m Manual page whereami(8) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--scriptdebug[0m[m
+[7m Manual page whereami(8) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Run in script debugging mode.  Each script supplied with `whereami' will `set -o xtrace' if the environment variable `DEBUGWHEREAMI'[m
+[7m Manual page whereami(8) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 is  set  to non-blank.  This parameter will set that variable.  The script which is built by whereami will also respond to the envi‐[m
+[7m Manual page whereami(8) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 ronment variable.[m
+[7m Manual page whereami(8) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--syslog[0m  Output some logging information to syslog.  The 'user' facility is used for this, and it provides an insight  into  which  locations[m
+[7m Manual page whereami(8) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 whereami has chosen, and why.[m
+[7m Manual page whereami(8) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 In  combination  with  [1m--scriptdebug[0m  above,  this  can be very useful for debugging your configuration.  Also note that the default[m
+[7m Manual page whereami(8) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 installation turns this on for apm and init actions.[m
+[7m Manual page whereami(8) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--noactions[0m[m
+[7m Manual page whereami(8) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Just do the detection and print the location name.  Don't build and run the script from whereami.conf.[m
+[7m Manual page whereami(8) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 You might do this if you wanted to use [1mwhereami[0m's detection, but use something else for configuration.  Perhaps  you  could  achieve[m
+[7m Manual page whereami(8) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 the same end with a very simple whereami.conf, but there should always be two ways to do anything :-).[m
+[7m Manual page whereami(8) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--nolocking[0m[m
+[7m Manual page whereami(8) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 [1mwhereami[0m  won't  normally let two copies of whereami run at the same time.  Use this option if you can come up with a scenario where[m
+[7m Manual page whereami(8) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 you should allow this to happen![m
+[7m Manual page whereami(8) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--mapping[0m This will persuade [1mwhereami[0m to do only the detection stage, and output a list of the detected locations, suitable for use as a  map‐[m
+[7m Manual page whereami(8) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 ping script with ifupdown.[m
+[7m Manual page whereami(8) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--hint[0m [4mlocations[24m[m
+[7m Manual page whereami(8) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Provides  some  hints  to  the detection process.  The locations set by this parameter (a comma-delimited list) may be referenced by[m
+[7m Manual page whereami(8) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 rules in your detect.conf.[m
+[7m Manual page whereami(8) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--basedir[0m [4mdirectory[24m[m
+[7m Manual page whereami(8) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Specifies the base directory which will contain both the detect.conf and whereami.conf.  The default is `/etc/whereami' which should[m
+[7m Manual page whereami(8) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 be right for normal use.[m
+[7m Manual page whereami(8) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--statedir[0m [4mdirectory[24m[m
+[7m Manual page whereami(8) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Specifies  the state directory in which [1mwhereami[0m will write files indicating the current and previous locations (iam , iwas) and the[m
+[7m Manual page whereami(8) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 script which is run for this environment (whereiam.sh).[m
+[7m Manual page whereami(8) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m--debug[0m   Run in debugging mode.  A verbose output is provided and the resulting script is output to the screen and not executed.[m
+[38;1H[K[7m Manual page whereami(8) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page whereami(8) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       but are not documented (RTFC :-)[m
+[38;1H[K[7m Manual page whereami(8) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       This  program  follows the modern command-line syntax preceding each option with a double dash (`--').  Short form options are also available,[m
+[38;1H[K[7m Manual page whereami(8) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mOPTIONS[0m[m
+[38;1H[K[7m Manual page whereami(8) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page whereami(8) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       Once the script has been built, it is run to effect the necessary changes to the system configuration.[m
+[38;1H[K[7m Manual page whereami(8) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page whereami(8) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--basedir[0m [4mdirectory[24m[m
+[7m Manual page whereami(8) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Specifies the base directory which will contain both the detect.conf and whereami.conf.  The default is `/etc/whereami' which should[m
+[7m Manual page whereami(8) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 be right for normal use.[m
+[7m Manual page whereami(8) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--statedir[0m [4mdirectory[24m[m
+[7m Manual page whereami(8) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Specifies  the state directory in which [1mwhereami[0m will write files indicating the current and previous locations (iam , iwas) and the[m
+[7m Manual page whereami(8) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 script which is run for this environment (whereiam.sh).[m
+[7m Manual page whereami(8) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--from[0m [4mlocation_list[24m[m
+[7m Manual page whereami(8) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Overrides [1mwhereami[0m's knowledge of where you have come from.  The [4mlocation_list[24m will be a comma-separated list of the locations which[m
+[7m Manual page whereami(8) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 you are leaving.[m
+[7m Manual page whereami(8) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Normally `[1mwhereami[0m' maintains a history of locations, so that it knows where you have come from (and what might consequently have to[m
+[7m Manual page whereami(8) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 be de-configured) as well as knowing that your location has changed.[m
+[7m Manual page whereami(8) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--run_from[0m [4mcalling_program_tag[24m[m
+[7m Manual page whereami(8) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 This provides a mechanism for calling software, such as init scripts, pcmcia startup or apm events, to  pass  some  of  that  source[m
+[7m Manual page whereami(8) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 information to [1mwhereami[0m, where it is promptly ignored, at present.[m
+[7m Manual page whereami(8) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 I have a possibly misguided idea that this might be useful somehow, but I can't think of any application of it at this point![m
+[7m Manual page whereami(8) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mlocation_list[0m[m
+[7m Manual page whereami(8) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Overrides  [1mwhereami[0m's testing of where you are.  The [4mlocation_list[24m will be a comma-separated list of the locations which you are now[m
+[7m Manual page whereami(8) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 at.[m
+[7m Manual page whereami(8) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 You might use this if you wished to bypass the detection phase, using some other package to handle that.[m
+[7m Manual page whereami(8) line 55 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 56 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page whereami(8) line 57 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       detect.conf (5), whereami.conf (5)[m
+[7m Manual page whereami(8) line 58 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 59 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       There is some further documentation in HTML available in /usr/share/doc/whereami/manual[m
+[7m Manual page whereami(8) line 60 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 61 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mFILES[0m[m
+[7m Manual page whereami(8) line 62 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m/etc/whereami/detect.conf[0m[m
+[7m Manual page whereami(8) line 63 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Defines the process of detection.[m
+[7m Manual page whereami(8) line 64 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 65 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m/etc/whereami/whereami.conf[0m[m
+[7m Manual page whereami(8) line 66 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                 Defines the actions performed as a result of entering, leaving, or remaining within a particular location.[m
+[7m Manual page whereami(8) line 67 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 68 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mKNOWN[0m [1mBUGS[0m[m
+[7m Manual page whereami(8) line 69 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This man page only documents the current perl version of whereami.  For backward compatibility with people's setups, it is possible to config‐[m
+[7m Manual page whereami(8) line 70 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ure your system to run the older shell-script, which is currently undocumented.[m
+[7m Manual page whereami(8) line 71 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 72 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       If  you  wish to switch from the shell script to the new perl program you will need to create an appropriate `detect.conf' file to define your[m
+[7m Manual page whereami(8) line 73 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       location detection parameters.  Your existing whereami.conf file should be compatible with this version.  Once you have created a  detect.conf[m
+[7m Manual page whereami(8) line 74 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       file in /etc/whereami you should run `[1mdpkg-reconfigure[0m [1mwhereami[0m' and respond to the questions.[m
+[7m Manual page whereami(8) line 75 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 76 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page whereami(8) line 77 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This manual page was written by Andrew McMillan <debian@mcmillan.net.nz> for the [1mDebian[0m [1mGNU/Linux[0m system (but may be used by others).  Permis‐[m
+[7m Manual page whereami(8) line 78 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       sion is granted to copy, distribute and/or modify this document under the terms of the GPL version 2.[m
+[7m Manual page whereami(8) line 79 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page whereami(8) line 80 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                                                                                                                                          whereami(8)[m
+[7m Manual page whereami(8) line 81 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page whereami(8) line 81/117 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ touch Gaitonde.txt[K[K[K[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  Gaitonde  [0m[01;34mKachra[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat Gaitonde
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat > Gaitonde
+Created by Vikram]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat[K[K[Kcat > Gaitonde[2PGaitonde
+Created by Vikram]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Bhagwan
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd Bhagwan
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ touch file1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 744 file1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ ls -la
+total 8
+drwxr-xr-x 2 prakashjha prakashjha 4096 Aug 13 17:22 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha 4096 Aug 13 17:20 [01;34m..[0m
+-rwxr--r-- 1 prakashjha prakashjha    0 Aug 13 17:22 [01;32mfile1[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ touch file2
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 666 file 2
+chmod: cannot access 'file': No such file or directory
+chmod: cannot access '2': No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 666 file 2[1P2
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 666 file2 2[5Ptouch file2[5Pls -la
+total 8
+drwxr-xr-x 2 prakashjha prakashjha 4096 Aug 13 17:23 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha 4096 Aug 13 17:20 [01;34m..[0m
+-rwxr--r-- 1 prakashjha prakashjha    0 Aug 13 17:22 [01;32mfile1[0m
+-rw-rw-rw- 1 prakashjha prakashjha    0 Aug 13 17:23 file2
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ touch file3
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 555 file [K3
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ la[Ks -la
+total 8
+drwxr-xr-x 2 prakashjha prakashjha 4096 Aug 13 17:24 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha 4096 Aug 13 17:20 [01;34m..[0m
+-rwxr--r-- 1 prakashjha prakashjha    0 Aug 13 17:22 [01;32mfile1[0m
+-rw-rw-rw- 1 prakashjha prakashjha    0 Aug 13 17:23 file2
+-r-xr-xr-x 1 prakashjha prakashjha    0 Aug 13 17:24 [01;32mfile3[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ cat file1 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ cat file1 [1@>[1@ 
+hello world]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ cat > file1 [2P[C[C[C[C[C[C[2@> [C[C[C[C[C[C[K[K2
+hello prakash
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ cat > file2[K3
+bash: file3: Permission denied
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod file [K3 777
+chmod: invalid mode: ‘file3’
+Try 'chmod --help' for more information.
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod file3 777[K[K[K[K7file37file37file3 file3
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ chmod 777 file3file3 777[4Pat > file3
+omg
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Bhagwan[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Bhagwan[00m$ cd
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~[00m$ cd Desktop
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop[00m$ cd 2018201013_lab1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Setting
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd Setting
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ touch Kukoo|touch |touch[C touch[C[C[C[C[C Mandir
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ ls
+Kukoo  Mandir
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat > Kukoo
+“Apun kukoo ke peechhe bhag raha ta^[[D^[[D^[[D^[[D^[[D                     a                                   Apn un kukoo ke peechhe bhaf g raha ta
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat > Maa[Kndir
+Desh mandir ke pec echhe bhag raha ta
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat >> Kukoo
+By Ganesh S Gaitonde
+^C
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat >> Kukoo Mandir> Kukoo
+^[[A^[[A        By Ganesh Gail tonde 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat Kukoo | cat Mandir
+Desh mandir ke peechhe bhag raha ta
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat Kukoo | cat Mandir[K[K[K[K[K[K[K[K[K[K[K[K
+Apun kukoo ke peechhe bhag raha ta
+By Ganesh Gaitonde
+By Ganesh Gaitonde 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat Kukoo | cat Mandir
+Desh mandir ke peechhe bhag raha ta
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat Mandir.txt>Mandir.txt Mandir.txt
+Apun socha jab desh mein PM ka imaan nahi, toh apun seedhe raaste chal ke kya
+karega
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cat > Mandir.txt[1P Mandir.txt
+Apun socha jab desh mein PM ka imaan nahi, toh apun seedhe raaste chal ke kya
+karega
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ ssh[K[K[Kcd ..
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh wen[Kb.iiit.ac.in
+The authenticity of host 'web.iiit.ac.in (10.4.21.70)' can't be established.
+ECDSA key fingerprint is SHA256:9Xntfryzm8Ch2vWnToEwMxiG9s3n93TwQZSA6R7GDjQ.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'web.iiit.ac.in,10.4.21.70' (ECDSA) to the list of known hosts.
+prakashjha@web.iiit.ac.in's password: 
+Permission denied, please try again.
+prakashjha@web.iiit.ac.in's password: 
+Permission denied, please try again.
+prakashjha@web.iiit.ac.in's password: 
+prakashjha@web.iiit.ac.in: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh web.iiit.ac.in
+prakashjha@web.iiit.ac.in's password: 
+Permission denied, please try again.
+prakashjha@web.iiit.ac.in's password: 
+Permission denied, please try again.
+prakashjha@web.iiit.ac.in's password: 
+prakashjha@web.iiit.ac.in: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ man tee
+[?1049h[22;0;0t[?1h=TEE(1)                                                              User Commands                                                              TEE(1)[m
+[m
+[1mNAME[0m[m
+       tee - read from standard input and write to standard output and files[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtee[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Copy standard input to each FILE, and also to standard output.[m
+[m
+       [1m-a[0m, [1m--append[0m[m
+              append to the given FILEs, do not overwrite[m
+[m
+       [1m-i[0m, [1m--ignore-interrupts[0m[m
+              ignore interrupt signals[m
+[m
+       [1m-p[0m     diagnose errors writing to non pipes[m
+[m
+       [1m--output-error[0m[=[4mMODE[24m][m
+              set behavior on write error.  See MODE below[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+   [1mMODE[0m [1mdetermines[0m [1mbehavior[0m [1mwith[0m [1mwrite[0m [1merrors[0m [1mon[0m [1mthe[0m [1moutputs:[0m[m
+       'warn' diagnose errors writing to any output[m
+[m
+       'warn-nopipe'[m
+              diagnose errors writing to any output not a pipe[m
+[m
+       'exit' exit on error writing to any output[m
+[m
+       'exit-nopipe'[m
+              exit on error writing to any output not a pipe[m
+[7m Manual page tee(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ man teessh web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh prakash.nath@web.iiit,ac[K[K[K.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat Kukoo Mand[Kdir
+cat: Kukoo: No such file or directory
+cat: Mandir: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd Setting
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cd Settingat Kukoo Mandir
+Apun kukoo ke peechhe bhag raha ta
+By Ganesh Gaitonde
+By Ganesh Gaitonde 
+Desh mandir ke peechhe bhag raha ta
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ touchmtouchatouchntouch touch
+[?1049h[22;0;0t[?1h=TOUCH(1)                                                            User Commands                                                            TOUCH(1)[m
+[m
+[1mNAME[0m[m
+       touch - change file timestamps[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mtouch[0m [[4mOPTION[24m]... [4mFILE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Update the access and modification times of each FILE to the current time.[m
+[m
+       A FILE argument that does not exist is created empty, unless [1m-c[0m or [1m-h[0m is supplied.[m
+[m
+       A FILE argument string of - is handled specially and causes touch to change the times of the file associated with standard output.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m     change only the access time[m
+[m
+       [1m-c[0m, [1m--no-create[0m[m
+              do not create any files[m
+[m
+       [1m-d[0m, [1m--date[0m=[4mSTRING[24m[m
+              parse STRING and use it instead of current time[m
+[m
+       [1m-f[0m     (ignored)[m
+[m
+       [1m-h[0m, [1m--no-dereference[0m[m
+              affect each symbolic link instead of any referenced file (useful only on systems that can change the timestamps of a symlink)[m
+[m
+       [1m-m[0m     change only the modification time[m
+[m
+       [1m-r[0m, [1m--reference[0m=[4mFILE[24m[m
+              use this file's times instead of current time[m
+[m
+       [1m-t[0m STAMP[m
+              use [[CC]YY]MMDDhhmm[.ss] instead of current time[m
+[7m Manual page touch(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--time[0m=[4mWORD[24m[m
+[7m Manual page touch(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              change the specified time: WORD is access, atime, or use: equivalent to [1m-a[0m WORD is modify or mtime: equivalent to [1m-m[0m[m
+[7m Manual page touch(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--help[0m display this help and exit[m
+[7m Manual page touch(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--version[0m[m
+[7m Manual page touch(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              output version information and exit[m
+[7m Manual page touch(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Note that the [1m-d[0m and [1m-t[0m options accept different time-date formats.[m
+[7m Manual page touch(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mDATE[0m [1mSTRING[0m[m
+[7m Manual page touch(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       A FILE argument that does not exist is created empty, unless [1m-c[0m or [1m-h[0m is supplied.[m
+[38;1H[K[7m Manual page touch(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mDATE[0m [1mSTRING[0m[m
+[7m Manual page touch(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The  --date=STRING  is  a  mostly free format human readable date string such as "Sun, 29 Feb 2004 16:21:42 -0800" or "2004-02-29 16:21:42" or[m
+[7m Manual page touch(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       even "next Thursday".  A date string may contain items indicating calendar date, time of day, time zone, day of week, relative time,  relative[m
+[7m Manual page touch(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       date, and numbers.  An empty string indicates the beginning of the day.  The date string format is more complex than is easily documented here[m
+[7m Manual page touch(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       but is fully described in the info documentation.[m
+[7m Manual page touch(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page touch(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Written by Paul Rubin, Arnold Robbins, Jim Kingdon, David MacKenzie, and Randy Smith.[m
+[7m Manual page touch(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page touch(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[m
+[7m Manual page touch(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Report touch translation bugs to <http://translationproject.org/team/>[m
+[7m Manual page touch(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOPYRIGHT[0m[m
+[7m Manual page touch(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Copyright © 2017 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.[m
+[7m Manual page touch(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page touch(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page touch(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Full documentation at: <http://www.gnu.org/software/coreutils/touch>[m
+[7m Manual page touch(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       or available locally via: info '(coreutils) touch invocation'[m
+[7m Manual page touch(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page touch(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[KGNU coreutils 8.28                                                   January 2018                                                            TOUCH(1)[m
+[7m Manual page touch(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page touch(1) line 34/70 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-r[0m, [1m--reference[0m=[4mFILE[24m[m
+[38;1H[K[7m Manual page touch(1) line 33/70 96% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 32/70 95% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-m[0m     change only the modification time[m
+[38;1H[K[7m Manual page touch(1) line 31/70 93% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 30/70 91% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM              affect each symbolic link instead of any referenced file (useful only on systems that can change the timestamps of a symlink)[m
+[38;1H[K[7m Manual page touch(1) line 29/70 90% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-h[0m, [1m--no-dereference[0m[m
+[38;1H[K[7m Manual page touch(1) line 28/70 90% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 27/70 87% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-f[0m     (ignored)[m
+[38;1H[K[7m Manual page touch(1) line 26/70 82% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 25/70 82% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM              parse STRING and use it instead of current time[m
+[38;1H[K[7m Manual page touch(1) line 24/70 82% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-d[0m, [1m--date[0m=[4mSTRING[24m[m
+[38;1H[K[7m Manual page touch(1) line 23/70 79% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 22/70 77% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM              do not create any files[m
+[38;1H[K[7m Manual page touch(1) line 21/70 76% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-c[0m, [1m--no-create[0m[m
+[38;1H[K[7m Manual page touch(1) line 20/70 76% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 19/70 73% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1m-a[0m     change only the access time[m
+[38;1H[K[7m Manual page touch(1) line 18/70 72% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 17/70 72% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       Mandatory arguments to long options are mandatory for short options too.[m
+[38;1H[K[7m Manual page touch(1) line 16/70 71% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 15/70 66% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       A FILE argument string of - is handled specially and causes touch to change the times of the file associated with standard output.[m
+[38;1H[K[7m Manual page touch(1) line 14/70 62% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 13/70 57% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       A FILE argument that does not exist is created empty, unless [1m-c[0m or [1m-h[0m is supplied.[m
+[38;1H[K[7m Manual page touch(1) line 12/70 56% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 11/70 56% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       Update the access and modification times of each FILE to the current time.[m
+[38;1H[K[7m Manual page touch(1) line 10/70 54% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mDESCRIPTION[0m[m
+[38;1H[K[7m Manual page touch(1) line 9/70 54% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 8/70 52% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       [1mtouch[0m [[4mOPTION[24m]... [4mFILE[24m...[m
+[38;1H[K[7m Manual page touch(1) line 7/70 51% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mSYNOPSIS[0m[m
+[38;1H[K[7m Manual page touch(1) line 6/70 51% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 5/70 50% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM       touch - change file timestamps[m
+[38;1H[K[7m Manual page touch(1) line 4/70 49% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[1mNAME[0m[m
+[38;1H[K[7m Manual page touch(1) line 3/70 45% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[38;1H[K[7m Manual page touch(1) line 2/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[HMTOUCH(1)                                                            User Commands                                                            TOUCH(1)[m
+[38;1H[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KAA[K[K[7m Manual page touch(1) line 1/70 44% (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ catmcatacatncat cat cat[1Pcat
+[?1049h[22;0;0t[?1h=CAT(1)                                                              User Commands                                                              CAT(1)[m
+[m
+[1mNAME[0m[m
+       cat - concatenate files and print on the standard output[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mcat[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       Concatenate FILE(s) to standard output.[m
+[m
+       With no FILE, or when FILE is -, read standard input.[m
+[m
+       [1m-A[0m, [1m--show-all[0m[m
+              equivalent to [1m-vET[0m[m
+[m
+       [1m-b[0m, [1m--number-nonblank[0m[m
+              number nonempty output lines, overrides [1m-n[0m[m
+[m
+       [1m-e[0m     equivalent to [1m-vE[0m[m
+[m
+       [1m-E[0m, [1m--show-ends[0m[m
+              display $ at end of each line[m
+[m
+       [1m-n[0m, [1m--number[0m[m
+              number all output lines[m
+[m
+       [1m-s[0m, [1m--squeeze-blank[0m[m
+              suppress repeated empty output lines[m
+[m
+       [1m-t[0m     equivalent to [1m-vT[0m[m
+[m
+       [1m-T[0m, [1m--show-tabs[0m[m
+              display TAB characters as ^I[m
+[m
+       [1m-u[0m     (ignored)[m
+[m
+[7m Manual page cat(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-v[0m, [1m--show-nonprinting[0m[m
+[7m Manual page cat(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              use ^ and M- notation, except for LFD and TAB[m
+[7m Manual page cat(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--help[0m display this help and exit[m
+[7m Manual page cat(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--version[0m[m
+[7m Manual page cat(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              output version information and exit[m
+[7m Manual page cat(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mEXAMPLES[0m[m
+[7m Manual page cat(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       cat f - g[m
+[7m Manual page cat(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              Output f's contents, then standard input, then g's contents.[m
+[7m Manual page cat(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       cat    Copy standard input to standard output.[m
+[7m Manual page cat(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mAUTHOR[0m[m
+[7m Manual page cat(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Written by Torbjorn Granlund and Richard M. Stallman.[m
+[7m Manual page cat(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mREPORTING[0m [1mBUGS[0m[m
+[7m Manual page cat(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[m
+[7m Manual page cat(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Report cat translation bugs to <http://translationproject.org/team/>[m
+[7m Manual page cat(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOPYRIGHT[0m[m
+[7m Manual page cat(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Copyright © 2017 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.[m
+[7m Manual page cat(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.[m
+[7m Manual page cat(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page cat(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mtac[0m(1)[m
+[7m Manual page cat(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Full documentation at: <http://www.gnu.org/software/coreutils/cat>[m
+[7m Manual page cat(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       or available locally via: info '(coreutils) cat invocation'[m
+[7m Manual page cat(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page cat(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[KGNU coreutils 8.28                                                   January 2018                                                              CAT(1)[m
+[7m Manual page cat(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page cat(1) line 33/69 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ man cattouchcat Kukoo Mandir[6Pd Settingat Kukoo Mandirssh prakash.nath@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ ssh vineet.puliparambil@web.iit.a.cin[1Pcin[C.init.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/Setting[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/Setting[00m$ cd ..
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a\[K | mkdir b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -la
+total 108
+drwxr-xr-x 7 prakashjha prakashjha  4096 Aug 13 17:51 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 73728 Aug 13 17:48 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:51 [01;34ma[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:51 [01;34mb[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r a[Kb
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ba[1Pls -la
+total 100
+drwxr-xr-x 5 prakashjha prakashjha  4096 Aug 13 17:52 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 73728 Aug 13 17:48 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir[Cmkdiramkdirnmkdir mkdir
+[?1049h[22;0;0t[?1h=MKDIR(1)                                                            User Commands                                                            MKDIR(1)[m
+[m
+[1mNAME[0m[m
+       mkdir - make directories[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mmkdir[0m [[4mOPTION[24m]... [4mDIRECTORY[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Create the DIRECTORY(ies), if they do not already exist.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-m[0m, [1m--mode[0m=[4mMODE[24m[m
+              set file mode (as in chmod), not a=rwx - umask[m
+[m
+       [1m-p[0m, [1m--parents[0m[m
+              no error if existing, make parent directories as needed[m
+[m
+       [1m-v[0m, [1m--verbose[0m[m
+              print a message for each created directory[m
+[m
+       [1m-Z[0m     set SELinux security context of each created directory to the default type[m
+[m
+       [1m--context[0m[=[4mCTX[24m][m
+              like [1m-Z[0m, or if CTX is specified then set the SELinux or SMACK security context to CTX[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[m
+[7m Manual page mkdir(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p a b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -la
+total 112
+drwxr-xr-x 7 prakashjha prakashjha  4096 Aug 13 17:53 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 77824 Aug 13 17:52 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:53 [01;34ma[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:53 [01;34mb[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -lamkdir -p a b[3Pan mkdir[3Pls -larm -r b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r b[1Pls -lamkdir -p a b[3Pan mkdir[3Pls -larm -r ba
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ab[1Pls -la
+total 104
+drwxr-xr-x 5 prakashjha prakashjha  4096 Aug 13 17:53 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 77824 Aug 13 17:52 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -larm -r ab[1Pls -lamkdir -p a b[1P b[1Pb[1@a[1@ 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a -p b[6Pls -la
+total 116
+drwxr-xr-x 7 prakashjha prakashjha  4096 Aug 13 17:53 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 81920 Aug 13 17:53 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:53 [01;34ma[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:53 [01;34mb[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/a[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/a[00m$ la[Ks
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/a[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/a[00m$ cd ..
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd ..[3Plscd als -lamkdir a -p b[6Pls -larm -r ab
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r b[2Pcd ..[3Plscd als -lamkdir a -p b[6Pls -larm -r a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd | mkdir a | mkdir b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lscd | mkdir a | mkdir brm -r a[Kb
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r bls[Kcd | mkdir a | mkdir brm -r a[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a | cd | mkdir b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsmkdir a | cd | mkdir brm -r a[Kb
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r bls[Kmkdir a | cd | mkdir brm -r a[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r abls[Kmkdir a | cd | mkdir b[1@a[1@ 
+bash: cd: a: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a | cd a | mkdir b[1P[1@b
+mkdir: cannot create directory ‘a’: File exists
+mkdir: cannot create directory ‘b’: File exists
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsmkdir a | cd b | mkdir ba[C[C[C[C[C[C[C[C[C[Crm -r a[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r als[Kmkdir a | cd b | mkdir ba[C[C[C[C[C[C[C[C[C[Crm -r a[Kb
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r bals[Kmkdir a | cd b | mkdir b
+bash: cd: b: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsmkdir a | cd b | mkdir brm -r b[Ka
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r als[Kmkdir a | cd b | mkdir brm -r b[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ man mkdir
+[?1049h[22;0;0t[?1h=MKDIR(1)                                                            User Commands                                                            MKDIR(1)[m
+[m
+[1mNAME[0m[m
+       mkdir - make directories[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mmkdir[0m [[4mOPTION[24m]... [4mDIRECTORY[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Create the DIRECTORY(ies), if they do not already exist.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-m[0m, [1m--mode[0m=[4mMODE[24m[m
+              set file mode (as in chmod), not a=rwx - umask[m
+[m
+       [1m-p[0m, [1m--parents[0m[m
+              no error if existing, make parent directories as needed[m
+[m
+       [1m-v[0m, [1m--verbose[0m[m
+              print a message for each created directory[m
+[m
+       [1m-Z[0m     set SELinux security context of each created directory to the default type[m
+[m
+       [1m--context[0m[=[4mCTX[24m][m
+              like [1m-Z[0m, or if CTX is specified then set the SELinux or SMACK security context to CTX[m
+[m
+       [1m--help[0m display this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING[0m [1mBUGS[0m[m
+       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>[m
+[7m Manual page mkdir(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a --parents /b
+mkdir: cannot create directory ‘/b’: Permission denied
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir a --parents /b[1@s[1@u[1@d[1@o[1@ 
+[sudo] password for prakashjha: 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/a[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/a[00m$ la
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/a[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/a[00m$ ls
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/a[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/a[00m$ cd
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~[00m$  cd b
+bash: cd: b: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~[00m$ cd Desktop
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop[00m$ cd 2018201013_lab1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -la
+total 120
+drwxr-xr-x 6 prakashjha prakashjha  4096 Aug 13 18:02 [0m[01;34m.[0m
+drwxr-xr-x 4 prakashjha prakashjha  4096 Aug 13 17:08 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 90112 Aug 13 18:01 2018201013_lab1.script
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 18:02 [01;34ma[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:24 [01;34mBhagwan[0m
+-rw-r--r-- 1 prakashjha prakashjha    17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 2 prakashjha prakashjha  4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ sudo makdir [K[K[K[K[K[Kkdir a --parents mkdir b
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mmkdir[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm a[K-r a
+rm: remove write-protected directory 'a'? yes
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r als[Krm -r a[Kb
+rm: remove write-protected directory 'b'? y
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r b[Kmkdir
+rm: remove write-protected directory 'mkdir'? y
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdri [K[K[Kid[Kr a[1@|[1@ [1@ [1@m[1@k[1@d[1@i[1@e[1P[1@r[C[1@ [1@-[1P[1@b[C[1@ [1@-[1@p[C[1@ [1@a
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34ma[0m  [01;34mb[0m  [01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsmkdir b -p a | mkdir a[11Prm -r mkdirb[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r bls[Kmkdir b -p a | mkdir a[11Prm -r mkdirb[Ka
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir ./ScriptingGames/Parulkar/Zoya [K|[K | mkdir ./ScriptingGames/Trivedi | Scri ptingGames/Sartaj/Megha | ./Scripting[KgGames/GaneshGail[Ktonde/cuckoo
+bash: ScriptingGames/Sartaj/Megha: No such file or directory
+bash: ./ScriptingGames/GaneshGaitonde/cuckoo: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Trivedi’: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Parulkar/Zoya’: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdo[Kir ScriptingGames[C[C[C[C[C[C[C[C[C
+bash: ScriptingGames/Sartaj/Megha: No such file or directory
+bash: ./ScriptingGames/GaneshGaitonde/cuckoo: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Trivedi’: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Parulkar/Zoya’: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mScriptingGames[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGames
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGamesls[Kmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | mkdir ScriptingGames[1@|[1@ [1@c[1@d[1P[1P[C[1@ [1@c[1@d[C[1@ [1@S[1@c[1@r[1@i[1@p[1@t[1@i[1@n[1@g[1@G[1@a[1@m[1@e[1@s
+bash: ScriptingGames/Sartaj/Megha: No such file or directory
+bash: ./ScriptingGames/GaneshGaitonde/cuckoo: No such file or directory
+bash: cd: ScriptingGames: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Trivedi’: No such file or directory
+mkdir: cannot create directory ‘./ScriptingGames/Parulkar/Zoya’: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | cd ScriptingGames | mkdir ScriptingGames[Arm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mScriptingGames[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cdScri[K[K[K[K scripting[K[K[K[K[K[K[K[K[KScriptingGAmes
+bash: cd: ScriptingGAmes: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd ScriptingGAmes[1Pmesames
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/ScriptingGames[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/ScriptingGames[00m$ ls
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1/ScriptingGames[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1/ScriptingGames[00m$ cd ..
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGames
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGamescd ..[K[3Plscd ScriptingGamesAmesls[Kmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | cd ScriptingGames | mkdir ScriptingGames[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C |[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | [1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | c[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| cd [1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd S[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| cd Sc[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scr[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scri[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scrip[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Script[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scripti[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scriptin[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd Scripting[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingG[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGa[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGam[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGame[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames [1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames |[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | [1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | m[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mk[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkd[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdi[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir[1P ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir [1PScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir S[1PcriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Sc[1PriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Scr[1PiptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| cd ScriptingGames | mkdir Scri[1PptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Scrip[1PtingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Script[1PingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Scripti[1PngGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Scriptin[1PgGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir Scripting[1PGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| cd ScriptingGames | mkdir ScriptingG[1Pames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir ScriptingGa[1Pmes[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| cd ScriptingGames | mkdir ScriptingGam[1Pes[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir ScriptingGame[1Ps[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir ScriptingGames[K[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | cd ScriptingGames | mkdir ScriptingGames [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[1P[1P
+bash: cd: ScriptingGames: No such file or directory
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mScriptingGames[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsrm -r ScriptingGamescd ..[Krm -r ScriptingGames
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGamesls[K
+2018201013_lab1.script  [0m[01;34mBhagwan[0m  Gaitonde  [01;34mKachra[0m  [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ lsrm -r ScriptingGamesls[Krm -r ScriptingGamescd ..[K[3Plscd ScriptingGamesAmesls[Kmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | cd ScriptingGames | mkdir ScriptingGames[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ScriptingGAmesamesls[Kcd ..rm -r ScriptingGamesls[Krm -r ScriptingGamesls[K[Klsrm -r ScriptingGamesls[Krm -r ScriptingGamescd ..[K[3Plscd ScriptingGamesAmesamesls[Kcd ..rm -r ScriptingGamesls[Krm -r ScriptingGames[C[1PScriptingGames[1PScriptingGames[1PScriptingGames[1PScriptingGames[1PScriptingGames[1PScriptingGamesmScriptingGameskScriptingGamesdScriptingGamesiScriptingGamesrScriptingGames ScriptingGames[1@\[1P[1@|[C[1@ [1@m[1@k[1@d[1@i[1@r[1@ [1@P[1@a[1@r[1@u[1@l[1@ [1@T[1@r[1@i[1@v[1@e[1@d[1@i[1@ [1@S[1@a[1@r[1@t[1@a[1@j[1@ [1@G[1@a[1@n[1@e[1@s[1@h[1@ [1P[1@G[1@a[1@i[1@t[1@o[1@n[1@d[1@e[1@ [1@-[1@p[1@ [1@S[1@c[1P[1P[1P[1P[1P[1@-[1@p[1@ [1@S[1@c[1@r[1@i[1@p[1@t[1@i[1@ng| mkdir ScriptingGames [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CG| mkdir ScriptingGamess[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C|mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [Cm | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [Ck | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[Cd | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[Ci | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[Cr | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[CZ | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[Co | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[Cy | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[Ca | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkd[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mk[1@d[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C- | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| m[1@k[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[Cp | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames| [1@m[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdir Parul Trivedi Sartaj GaneshGaitonde -p ScriptingGames|[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck Trivedi Sartaj GaneshGaitonde -p ScriptingGames[1@|[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca Trivedi Sartaj GaneshGaitonde -p ScriptingGame[1@s[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr Trivedi Sartaj GaneshGaitonde -p ScriptingGam[1@e[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CP | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGa[1@m[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingG[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scripting[1@G[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scriptin[1@g[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scripti[1@n[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Script[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scrip[1@t[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scri[1@p[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C|mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Scr[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p Sc[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[Cm| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p S[1@c[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [Ck| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p [1@S[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[Cd| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[Ci| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -[1@p[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[Cr| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde [1@-[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[CM| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaitond[1@e[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[Ce| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaiton[1@d[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[Cg| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGaito[1@n[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[Ch| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGait[1@o[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[Ca| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGai[1@t[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshGa[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C-| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj GaneshG[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[Cp| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Ganesh[1@G[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Ganes[1@h[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[CS| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Gane[1@s[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CA| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Gan[1@e[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Gane[1P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Gan[1@e[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj Ga[1@n[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj G[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj [1@G[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cj| mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sartaj[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sarta[1@j[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C|mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sart[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sar[1@t[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[Cm| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi Sa[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [Ck| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi S[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[Cd| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi [1@S[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[Ci| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trivedi[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[Cr| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trived[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Trive[1@d[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[CC| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Triv[1@e[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[Cu| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Tri[1@v[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[Cc| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar Tr[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[Ck| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar T[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[Co| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar [1@T[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[Co| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulkar[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulka[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C-| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parulk[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[Cp| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Parul[1@k[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Paru[1@l[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CG| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Par[1@u[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir Pa[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir P[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir [1@P[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdir[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ch| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkdi[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CG| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mkd[1@i[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | mk[1@d[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | m[1@k[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar | [1@m[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar |[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar [1@|[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd| mkdir Megha -p Sartaj | mkdir Zoya -p Parulkar[1@ [A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce| mkdir Megha -p Sartaj | mkdir Zoya -p Parulka[1@r[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C | mkdir Megha -p Sartaj | mkdir Zoya -p Parulk[1@a[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+mkdir: cannot create directory ‘ScriptingGames’: File exists
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -r ScriptingGames
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGamesmkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames
+mkdir: cannot create directory ‘ScriptingGames’: File exists
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[Arm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGamesmkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames
+mkdir: cannot create directory ‘ScriptingGames’: File exists
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[K[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[Arm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir Cuckoo -p GaneshGaitonde | mkdir Megha -p Sartaj | mkdir Zoya -p Parulkkar | mkdir Parulkar Trivedi Sartaj GaneshGaitonde -p ScriptingGames| mkdir ScriptingGames[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -r ScriptingGamesls[Krm -r ScriptingGamescd ..[K[3Plscd ScriptingGamesAmesls[Kmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | cd ScriptingGames | mkdir ScriptingGames[Arm -r ScriptingGames[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo | mkdir ScriptingGames[Als[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir ./ScriptingGames/Parulkar/Zoya | mkdir ./ScriptingGames/Trivedi | ScripptingGames/Sartaj/Megha | ./ScriptingGames/GaneshGaitonde/cuckoo[A]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ rm -r a[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbls[Kmkdir b -p a | mkdir a[11Prm -r mkdirb[Kals[Ksudo mkdir a --parents mkdir brm -r a[K[1Pls -lacd 2018201013_lab1[8PDesktop[Klsacd a[2Plssudo mkdir a --parents /b[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pan mkdir[2Prm -r bals[Kmkdir a | cd b | mkdir brm -r b[Kals[Kmkdir a | cd b | mkdir ba[C[C[C[C[C[C[C[C[C[Crm -r a[Kbls[Kmkdir a | cd | mkdir brm -r a[Kbls[Kcd | mkdir a | mkdir brm -r a[Kb[2Pcd ..[3Plscd als -lamkdir a -p b[6Pls -larm -r ab[1Pls -lamkdir -p a b[3Pan mkdir[3Pls -larm -r ba[1Pls -la[Kmkdir a | mkdir bcd ..[Kssh vineet.puliparambil@web.iiit.ac.in[7Pprakash.nath@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh mitesh.shah@web.iiit.ac.io[Kn
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh mitesh.shah@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ifconfig
+eno1: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 10:e7:c6:f8:6a:be  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 50236  bytes 64121319 (64.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 50236  bytes 64121319 (64.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlo1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.2.133.50  netmask 255.255.240.0  broadcast 10.2.143.255
+        inet6 fe80::f61c:9146:abf9:4b50  prefixlen 64  scopeid 0x20<link>
+        ether 7c:76:35:dd:55:95  txqueuelen 1000  (Ethernet)
+        RX packets 3116  bytes 1820394 (1.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3070  bytes 498855 (498.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ifconfigssh mitesh.shah@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh aditya.motwani@web
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [H[2J]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh aditya.motwani@webmitesh.shah@web.iiit.ac.inifconfig[Kssh mitesh.shah@web.iiit.ac.inprakash.nath@web.iiit.ac.in[1Pmitesh.shah@web.iiit.ac.inifconfig[Kssh mitesh.shah@web.iiit.ac.in[8Paditya.motwani@web[Ksudo service sshd restart
+[sudo] password for prakashjha: 
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ sudo service sshd restart[3Psh aditya.motwani@web
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh aditya.motwani@webudo service sshd restart[C[K[K[K[K[K[K[K[K[K sshd restart
+ * Usage: /etc/init.d/ssh {start|stop|reload|force-reload|restart|try-restart|status}
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ sudo service ssh sshd restart[K[K[K[K[K[K[K[K[K[K[K[Krestart
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ sudo service ssh restartsshd restart[7Psh aditya.motwani@webudo service sshd restart[3Psh aditya.motwani@webmitesh.shah@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh mitesh.shah@web.iiit.ac.in[6Pudo service ssh restart[K[K[K[K[K[K[Kstatusd[K
+[?1h=[0;1;32m●[0m ssh.service - OpenBSD Secure Shell server[m
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)[m
+   Active: [0;1;32mactive (running)[0m since Mon 2018-08-13 18:23:45 IST; 13s ago[m
+  Process: 3300 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)[m
+  Process: 3292 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)[m
+  Process: 15781 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)[m
+ Main PID: 15782 (sshd)[m
+    Tasks: 1 (limit: 4915)[m
+   CGroup: /system.slice/ssh.service[m
+           └─15782 /usr/sbin/sshd -D[m
+[m
+Aug 13 18:23:45 prakashjha-HP-Pavilion-Laptop-15-cc1xx systemd[1]: Starting OpenBSD Secure Shell server...[m
+Aug 13 18:23:45 prakashjha-HP-Pavilion-Laptop-15-cc1xx sshd[15782]: Server listening on 0.0.0.0 port 22.[m
+Aug 13 18:23:45 prakashjha-HP-Pavilion-Laptop-15-cc1xx sshd[15782]: Server listening on :: port 22.[m
+Aug 13 18:23:45 prakashjha-HP-Pavilion-Laptop-15-cc1xx systemd[1]: Started OpenBSD Secure Shell server.[m
+[K[?1l>]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ sudo service ssh status[Kssh localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:77eyRcDm25F0qqt1dPhhfgDK4cLHbqlnNR4MhKxDmTE.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'localhost' (ECDSA) to the list of known hosts.
+prakashjha@localhost's password: 
+
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [H[2J]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh localhostudo service ssh statussh mitesh.shah@web.iiit.ac.in[6Pudo service ssh restartsh mitesh.shah@web.iiit.ac.in^C
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh aditya.m@ada.iiit.ac.in
+The authenticity of host 'ada.iiit.ac.in (10.4.24.24)' can't be established.
+ECDSA key fingerprint is SHA256:hCIK+sQLNnGDeSQxfEjDRMannJiX+MoMEkjaOpWKKHs.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'ada.iiit.ac.in,10.4.24.24' (ECDSA) to the list of known hosts.
+aditya.m@ada.iiit.ac.in's password: 
+Last login: Sun Aug 12 22:16:30 2018 from 10.1.35.12
+--------------------------------------------------------------------------------
+Disk quotas for user aditya.m (uid 1185): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+      /dev/sdb1  16978M  25000M  27000M           44468       0       0        
+      /dev/sdc1      4K  100000M    106G               1       0       0        
+--------------------------------------------------------------------------------
+]0;aditya.m@ada:~[?1034h[aditya.m@ada ~]$ logout
+Connection to ada.iiit.ac.in closed.
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [H[2J]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh aditya.m@ada.iiit.ac.in[14Plocalhostudo service ssh statussh mitesh.shah@web.iiit.ac.in
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh mitesh.shah@web.iiit.ac.in[3Paditya.m@ada.iiit.ac.in[14Plocalhostudo service ssh statussh mitesh.shah@web.iiit.ac.in[6Pudo service ssh restartsh mitesh.shah@web.iiit.ac.in[6Pudo service ssh restartsshd restart[7Psh aditya.motwani@webudo service sshd restart[3Psh aditya.motwani@webmitesh.shah@web.iiit.ac.inifconfig[Kssh mitesh.shah@web.iiit.ac.inifconfig[Kssh mitesh.shah@web.iiit.ac.in[8Paditya.motwani@webudo service sshd restart[3Psh aditya.motwani@webudo service ssh sshd restart[5Prestartsh mitesh.shah@web.iiit.ac.in[7Pudo service ssh status[10Psh localhostaditya.m@ada.iiit.ac.inmitesh.shah@web.iiit.ac.in[Kssh mitesh.shah@web.iiit.ac.in-mitesh.shah@web.iiit.ac.invmitesh.shah@web.iiit.ac.in mitesh.shah@web.iiit.ac.in
+OpenSSH_7.6p1 Ubuntu-4, OpenSSL 1.0.2n  7 Dec 2017
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to web.iiit.ac.in [10.4.21.70] port 22.
+debug1: Connection established.
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_rsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6p1 Ubuntu-4
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ vim /ssh [K[K[K[K[K..s[Ks[K[K[K.ssh[K[K[K[K[K[K[K[K[K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ssh -v mitesh.shah@web.iiit.ac.in
+OpenSSH_7.6p1 Ubuntu-4, OpenSSL 1.0.2n  7 Dec 2017
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to web.iiit.ac.in [10.4.21.70] port 22.
+debug1: Connection established.
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_rsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/prakashjha/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6p1 Ubuntu-4
+ssh_exchange_identification: read: Connection reset by peer
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ^C
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ exit
+
+Script done on 2018-08-13 18:28:39+0530
+Script started on 2018-08-13 20:45:54+0530
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ [K]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ touch Anjali_Mathur.txt,Anjali_Mathur.txt[1PAnjali_Mathur.txt.Anjali_Mathur.txt
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat > Anjali_Mathur.txt
+Agar mard field pe kaam karna chahe toh passion. Aur agar aurat karna chahe toh
+bhoot.
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cat > Anjali_Mathur.txt[C.Anjali_Mathur.txt
+Agar mard field pe kaam karna chahe toh passion. Aur agar aurat karna chahe toh
+bhoot.
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ls -la
+total 216
+drwxr-xr-x 7 prakashjha prakashjha   4096 Aug 13 20:48 [0m[01;34m.[0m
+drwxr-xr-x 5 prakashjha prakashjha   4096 Aug 13 19:20 [01;34m..[0m
+-rw-r--r-- 1 prakashjha prakashjha 174604 Aug 13 18:28 2018201013_lab1.script
+-rw-r--r-- 1 prakashjha prakashjha     87 Aug 13 20:48 .Anjali_Mathur.txt
+-rw-r--r-- 1 prakashjha prakashjha    973 Aug 13 19:17 answer.txt
+drwxr-xr-x 2 prakashjha prakashjha   4096 Aug 13 17:24 [01;34mBhagwan[0m
+drwxr-xr-x 3 prakashjha prakashjha   4096 Aug 13 19:04 [01;34mCopyOfScriptingGames[0m
+-rw-r--r-- 1 prakashjha prakashjha     17 Aug 13 17:18 Gaitonde
+drwxr-xr-x 2 prakashjha prakashjha   4096 Aug 13 17:16 [01;34mKachra[0m
+drwxr-xr-x 6 prakashjha prakashjha   4096 Aug 13 18:53 [01;34mScriptingGames[0m
+drwxr-xr-x 2 prakashjha prakashjha   4096 Aug 13 17:34 [01;34mSetting[0m
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p ~Scriptingga[K[K[KgGames/Parulkar/Zoya | [1@/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdri[K[K[Kdir -p ~/ScriptingGames/Trivedi
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p ~/ScriptingGames/Parulkar/Zoya | mkdir -p ~/ScriptingGames/Trivedi[C[1@2[1@0[1@1[1@8[1@2[1@0[1@1[1@0[1@1[1@3[1@_[1@l[1@a[1@b[1@1
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p ~2018201013_lab1/ScriptingGames/Parulkar/Zoya | mkdir -p ~/ScriptingGames/Trivedi[15P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p ScriptingGames/Parulkar/Zoya | mkdir -p ~/ScriptingGames/Trivedi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1PScriptingGames/Trivedi[1PScriptingGames/Trivedi
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ mkdir -p ScriptingGames/Parulkar/Zoya | mkdir -p ScriptingGames/Trivedi | mkdir-p[K[K -p ScriptingGames/Sartaj/Ma[Kegha | mkdir -p Scrip tingGames/GaneshGaitonde/Cuckoo
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ ^C
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ tar -cvzf 2018201013_lab1.tar.gz 20180[K201013_lab1
+tar: 2018201013_lab1: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop/2018201013_lab1[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop/2018201013_lab1[00m$ cd ..
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop[00m$ cd ..tar -cvzf 2018201013_lab1.tar.gz 2018201013_lab1
+2018201013_lab1/
+2018201013_lab1/CopyOfScriptingGames/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Parulkar/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Parulkar/Zoya/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/GaneshGaitonde/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/GaneshGaitonde/Kukoo
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/GaneshGaitonde/Cuckoo/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Sartaj/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Sartaj/Megha/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Trivedi/
+2018201013_lab1/CopyOfScriptingGames/ScriptingGames/Trivedi/Mandir
+2018201013_lab1/Gaitonde
+2018201013_lab1/2018201013_lab1.tar.gz
+2018201013_lab1/Kachra/
+2018201013_lab1/Setting/
+2018201013_lab1/Setting/Mandir.txt
+2018201013_lab1/Setting/Kukoo
+2018201013_lab1/Setting/Mandir
+2018201013_lab1/ScriptingGames/
+2018201013_lab1/ScriptingGames/Parulkar/
+2018201013_lab1/ScriptingGames/Parulkar/Zoya/
+2018201013_lab1/ScriptingGames/GaneshGaitonde/
+2018201013_lab1/ScriptingGames/GaneshGaitonde/Cuckoo/
+2018201013_lab1/ScriptingGames/Sartaj/
+2018201013_lab1/ScriptingGames/Sartaj/Megha/
+2018201013_lab1/ScriptingGames/Trivedi/
+2018201013_lab1/Bhagwan/
+2018201013_lab1/Bhagwan/file2
+2018201013_lab1/Bhagwan/file3
+2018201013_lab1/Bhagwan/file1
+2018201013_lab1/2018201013_lab1.script
+2018201013_lab1/answer.txt
+2018201013_lab1/.Anjali_Mathur.txt
+]0;prakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx: ~/Desktop[01;32mprakashjha@prakashjha-HP-Pavilion-Laptop-15-cc1xx[00m:[01;34m~/Desktop[00m$ exit
+exit
+
+Script done on 2018-08-13 21:02:15+0530
